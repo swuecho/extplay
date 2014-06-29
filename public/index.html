@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ext Play</title>
+
+    <!-- Ext.Direct Admin API declaration -->
+<script type="text/javascript" src="ext/ext-all-dev.js"></script>
+<script src="/ext-api"></script>
+<script>
+  Ext.require([
+    'Ext.direct.*',
+    'Ext.form.Panel',
+    'Ext.form.field.Text',
+    'Ext.form.field.Number'
+]);
+
+Ext.onReady(function(){
+  Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
+  AlbumList.getAll(function(value){
+                    console.log('Server Response', value);
+ 
+  });
+  
+});
+</script>
+
+</head>
+<body>
+</body>
+</html>
